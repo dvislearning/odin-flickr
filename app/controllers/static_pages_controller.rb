@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   def home
   	@user_id = params[:user_id]
   	unless @user_id.nil? || @user_id.empty?
-  		@photos = user_photos(@user_id, photo_count = 12)
+  		@photos = user_photos(@user_id, photo_count = 22)
   	else
   		if params[:commit] ==  "Search"
   			@photos = []
@@ -12,11 +12,11 @@ class StaticPagesController < ApplicationController
 
   private
 
-	def user_photos(user_id, photo_count = 12)
+	def user_photos(user_id, photo_count = 22)
 		begin
 			set_env_variables
 			photo_ids = []
-			from_flickr = flickr.photos.search(:user_id => user_id).to_a
+			from_flickr = flickr.photos.search(:user_id => user_id).to_a.values_at(0..(photo_count-1))
 			from_flickr.each do |photo|
 				photo_ids << photo.id
 			end
