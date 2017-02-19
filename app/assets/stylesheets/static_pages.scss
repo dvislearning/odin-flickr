@@ -1,3 +1,54 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.flickr {
+	text-align:center;
+	padding-top: 12px;	
+}
+
+.flickr ul {
+	list-style-type: none;
+    margin: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.flickr ul li {
+	border-bottom: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.flickr img {
+	border: 5px solid black;
+    padding: 3px 3px 3px 3px;
+    margin: 0;
+    height: 250px;
+    width: 280px;
+}
+
+#front_header {
+	font-family: Courier New;
+	font-size: 40px;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.search_form {
+	text-align: center;
+}
+
+.search_form input {
+	height: 40px;
+	width: 500px;
+}
+
+
+.flickr_error {
+	text-align: center;
+}
+
+.flickr_error p {
+	font-size: 1.5em;
+}
