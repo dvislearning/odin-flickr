@@ -1,24 +1,7 @@
-# README
+# Odin Flickr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Odin Flickr uses the FLickr API to retrieve a user's pictures and display them on screen.  A Flickr user ID is entered into a form and displayed in groups of two.  Credentials are stored an ENV variables and managed with the help of the Figaro gem.  
 
-Things you may want to cover:
+View in Heroku at [http://serene-spire-20652.herokuapp.com/](http://serene-spire-20652.herokuapp.com/)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Part of The Odin Project's [Ruby on Rails Curriculum.](https://github.com/dvislearning/odin-flickr)
