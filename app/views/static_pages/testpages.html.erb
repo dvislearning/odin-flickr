@@ -1,0 +1,6 @@
+This is a test page!<br/ >
+<div class="flickr">
+  <%  @photos.each do |photo| %>
+    <%= render 'photo', photo: photo %>
+  <% end %>
+</div>  

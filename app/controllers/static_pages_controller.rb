@@ -9,6 +9,11 @@ class StaticPagesController < ApplicationController
   		end
   	 end
   end
+  
+  def testpages
+  	person =  Flickr.people.find("156699110@N04")
+  	@photos = person.public_photos(sizes: true).map(&:square150!)
+  end
 
   private
 
