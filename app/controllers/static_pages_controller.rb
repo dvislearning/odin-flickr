@@ -1,34 +1,17 @@
 class StaticPagesController < ApplicationController
-  def home
-  	@user_id = params[:user_id]
-  	unless @user_id.nil? || @user_id.empty?
-  		@photos = user_photos(@user_id, photo_count = 22)
-  	else
-  		if params[:commit] ==  "Search"
-  			@photos = []
-  		end
-  	 end
-  end
-  
-  def testpages
-  	person =  Flickr.people.find("156699110@N04")
-  	@photos = person.public_photos(sizes: true).map(&:square150!)
-  end
-
-  private
-
-	def user_photos(user_id, photo_count = 22)
-		begin
-			set_env_variables
-			photo_ids = []
-			from_flickr = flickr.photos.search(:user_id => user_id).to_a.values_at(0..(photo_count-1))
-			from_flickr.each do |photo|
-				photo_ids << photo.id
+	def home
+		person = Flickr.people.find("#{params[:user_id]}")
+		if params[:commit] ==  "Search"
+			begin
+			@photos = person.public_photos(sizes: true).map(&:medium500!)
+				if @photos && @photos.any?
+					@photos
+				else
+					@photos = :empty
+				end
+			rescue
+				@photos = :invalid
 			end
-			return photo_ids.in_groups_of(2)
-		rescue Exception
-			return []
 		end
 	end
 end
-

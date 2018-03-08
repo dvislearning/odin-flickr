@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails',        '5.0.0.1'
+gem 'rails'
 gem 'figaro'
 gem 'flickr-objects'  
 gem 'carrierwave',             '0.11.2'
