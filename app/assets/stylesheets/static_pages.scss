@@ -45,10 +45,21 @@
 }
 
 
-.flickr_error {
-	text-align: center;
+.invalid {
+	padding-top: 32px;	
+	text-align:center;
+	font-family: arial;
+	font-size: 2.5em;
 }
 
-.flickr_error p {
-	font-size: 1.5em;
+.site_text {
+	font-family: arial;
+	font-size: 1 em
+}
+
+.empty {
+	padding-top: 32px;	
+	text-align:center;
+	font-family: arial;
+	font-size: 2.5em;
 }

@@ -5,9 +5,9 @@
 
 <% unless @photos.nil? %>
 	<% if @photos == :invalid %>
-		Invalid submission	
+		<%= render 'invalid' %> 	
 	<% elsif @photos == :empty %>
-		This album does not contain any photos.
+		<%= render 'empty' %> 
 	<% else %>
 		<%= render 'photos' %> 
 	<% end %>
